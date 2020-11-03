@@ -21,12 +21,6 @@ module.exports = {
       confirmations:2,
       timeoutBlocks:200,
       skipDryRun:true
-    },
-    compilers:{
-      solc:{
-          version:"0.6.0"
-      }
     }
-
   }
 };
