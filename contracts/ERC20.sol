@@ -29,6 +29,7 @@ import "./SafeMath.sol";
  * functions have been added to mitigate the well-known issues around setting
  * allowances. See {IERC20-approve}.
  */
+ 
 contract ERC20 is Context, IERC20 {
     using SafeMath for uint256;
 

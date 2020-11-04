@@ -235,7 +235,7 @@ contract Collateralizer is Pausable, PermissionEvents {
         );
 
         // log the return event.
-        emit CollateralReturned(
+      emit  CollateralReturned(
             agreementId,
             collateralizer,
             collateralToken,

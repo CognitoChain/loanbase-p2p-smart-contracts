@@ -35,9 +35,10 @@ interface TermsContract {
      /// @param  agreementId bytes32. The agreement id (issuance hash) of the debt agreement to which this pertains.
      /// @param  debtor address. The debtor in this particular issuance.
      /// @return _success bool. Acknowledgment of whether
-    function registerTermStart(bytes32 agreementId,address debtor) external returns(bool _success);
-        
-    
+    function registerTermStart(
+        bytes32 agreementId,
+        address debtor
+    ) external returns (bool _success);
 
      /// When called, the registerRepayment function records the debtor's
      ///  repayment, as well as any auxiliary metadata needed by the contract
@@ -80,5 +81,5 @@ interface TermsContract {
      */
     function getTermEndTimestamp(
         bytes32 _agreementId
-    ) external view returns (uint);
+    ) external  view returns (uint);
 }

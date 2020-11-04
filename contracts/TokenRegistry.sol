@@ -1,7 +1,7 @@
 // SPDX-License-Identifier: MIT
 pragma solidity >=0.4.21 <0.7.0;
 
-
+import "../contracts/lifecycle/Ownable.sol";
 
 
 /**
@@ -18,12 +18,10 @@ pragma solidity >=0.4.21 <0.7.0;
  * governance mechanisms, we intend to shift ownership of this utility
  * contract to the Dharma community.
  */
-contract TokenRegistry {
-    
+contract TokenRegistry is Ownable {
     mapping (bytes32 => TokenAttributes) public symbolHashToTokenAttributes;
     string[256] public tokenSymbolList;
     uint8 public tokenSymbolListLength;
-    address public owner;
 
     struct TokenAttributes {
         // The ERC20 contract address.
@@ -236,49 +234,4 @@ contract TokenRegistry {
             attributes.numDecimals
         );
     }
-
-    
-    event OwnershipRenounced(address indexed previousOwner);
-  event OwnershipTransferred(
-    address indexed previousOwner,
-    address indexed newOwner
-  );
-
-
-  /**
-   * @dev The Ownable constructor sets the original `owner` of the contract to the sender
-   * account.
-   */
-  constructor() public {
-    owner = msg.sender;
-  }
-
-  /**
-   * @dev Throws if called by any account other than the owner.
-   */
-  modifier onlyOwner() {
-    require(msg.sender == owner);
-    _;
-  }
-
-  /**
-   * @dev Allows the current owner to transfer control of the contract to a newOwner.
-   * @param newOwner The address to transfer ownership to.
-   */
-  function transferOwnership(address newOwner) public onlyOwner {
-    require(newOwner != address(0));
-    emit OwnershipTransferred(owner, newOwner);
-    owner = newOwner;
-  }
-
-  /**
-   * @dev Allows the current owner to relinquish control of the contract.
-   */
-  function renounceOwnership() public onlyOwner {
-    emit OwnershipRenounced(owner);
-    owner = address(0);
-  }
-
-
-    
 }

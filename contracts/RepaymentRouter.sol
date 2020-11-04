@@ -26,6 +26,7 @@ import "./ERC20.sol";
 import "../contracts/lifecycle/Pausable.sol";
 
 
+
 /**
  * The RepaymentRouter routes allowers payers to make repayments on any
  * given debt agreement in any given token by routing the payments to
@@ -35,6 +36,8 @@ import "../contracts/lifecycle/Pausable.sol";
  *
  * Authors: Jaynti Kanani -- Github: jdkanani, Nadav Hollander -- Github: nadavhollander
  */
+
+ 
 contract RepaymentRouter is Pausable {
     DebtRegistry public debtRegistry;
     TokenTransferProxy public tokenTransferProxy;
@@ -82,7 +85,7 @@ contract RepaymentRouter is Pausable {
 
         // Ensure agreement exists.
         if (!debtRegistry.doesEntryExist(agreementId)) {
-           emit LogError(uint8(Errors.DEBT_AGREEMENT_NONEXISTENT), agreementId);
+            emit LogError(uint8(Errors.DEBT_AGREEMENT_NONEXISTENT), agreementId);
             return 0;
         }
 
@@ -103,7 +106,7 @@ contract RepaymentRouter is Pausable {
             amount,
             tokenAddress
         )) {
-        emit LogError(uint8(Errors.REPAYMENT_REJECTED_BY_TERMS_CONTRACT), agreementId);
+            emit LogError(uint8(Errors.REPAYMENT_REJECTED_BY_TERMS_CONTRACT), agreementId);
             return 0;
         }
 
@@ -116,7 +119,7 @@ contract RepaymentRouter is Pausable {
         ));
 
         // Log event for repayment
-        emit LogRepayment(agreementId, msg.sender, beneficiary, amount, tokenAddress);
+       emit LogRepayment(agreementId, msg.sender, beneficiary, amount, tokenAddress);
 
         return amount;
     }

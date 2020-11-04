@@ -349,13 +349,16 @@ contract DebtRegistry is Pausable, PermissionEvents {
         pure
         returns(bytes32)
     {
-         abi.encode(_entry.version,
+        return keccak256(abi.encodePacked(
+            _entry.version,
             _debtor,
             _entry.underwriter,
             _entry.underwriterRiskRating,
             _entry.termsContract,
             _entry.termsContractParameters,
-            _salt);
-    
+            _salt
+            )
+            
+        );
     }
 }

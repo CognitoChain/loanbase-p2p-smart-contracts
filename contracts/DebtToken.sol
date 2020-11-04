@@ -38,6 +38,8 @@ import "./ERC20.sol";
  *
  * Author: Nadav Hollander -- Github: nadavhollander
  */
+
+ 
 contract DebtToken is ERC721, Pausable, PermissionEvents {
     using PermissionsLib for PermissionsLib.Permissions;
 

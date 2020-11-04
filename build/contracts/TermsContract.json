@@ -137,25 +137,25 @@
       "type": "function"
     }
   ],
-  "metadata": "{\"compiler\":{\"version\":\"0.5.16+commit.9c3226ce\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"constant\":true,\"inputs\":[{\"internalType\":\"bytes32\",\"name\":\"agreementId\",\"type\":\"bytes32\"},{\"internalType\":\"uint256\",\"name\":\"timestamp\",\"type\":\"uint256\"}],\"name\":\"getExpectedRepaymentValue\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[{\"internalType\":\"bytes32\",\"name\":\"_agreementId\",\"type\":\"bytes32\"}],\"name\":\"getTermEndTimestamp\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[{\"internalType\":\"bytes32\",\"name\":\"agreementId\",\"type\":\"bytes32\"}],\"name\":\"getValueRepaidToDate\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[{\"internalType\":\"bytes32\",\"name\":\"agreementId\",\"type\":\"bytes32\"},{\"internalType\":\"address\",\"name\":\"payer\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"beneficiary\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"unitsOfRepayment\",\"type\":\"uint256\"},{\"internalType\":\"address\",\"name\":\"tokenAddress\",\"type\":\"address\"}],\"name\":\"registerRepayment\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"_success\",\"type\":\"bool\"}],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[{\"internalType\":\"bytes32\",\"name\":\"agreementId\",\"type\":\"bytes32\"},{\"internalType\":\"address\",\"name\":\"debtor\",\"type\":\"address\"}],\"name\":\"registerTermStart\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"_success\",\"type\":\"bool\"}],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"}],\"devdoc\":{\"methods\":{\"getExpectedRepaymentValue(bytes32,uint256)\":{\"params\":{\"agreementId\":\"bytes32. The agreement id (issuance hash) of the debt agreement to which this pertains.\",\"timestamp\":\"uint. The timestamp of the block for which repayment expectation is being queried.\"},\"return\":\"uint256 The cumulative units-of-value expected to be repaid by the time the given timestamp lapses.\"},\"getValueRepaidToDate(bytes32)\":{\"params\":{\"agreementId\":\"bytes32. The agreement id (issuance hash) of the debt agreement to which this pertains.\"},\"return\":\"uint256 The cumulative units-of-value repaid up until now.\"},\"registerRepayment(bytes32,address,address,uint256,address)\":{\"params\":{\"agreementId\":\"bytes32. The agreement id (issuance hash) of the debt agreement to which this pertains.\",\"beneficiary\":\"address. The address of the payment's beneficiary.\",\"payer\":\"address. The address of the payer.\",\"tokenAddress\":\"address. The address of the token with which the repayment transaction was executed.\",\"unitsOfRepayment\":\"uint. The units-of-value repaid in the transaction.\"}},\"registerTermStart(bytes32,address)\":{\"params\":{\"agreementId\":\"bytes32. The agreement id (issuance hash) of the debt agreement to which this pertains.\",\"debtor\":\"address. The debtor in this particular issuance.\"},\"return\":\"_success bool. Acknowledgment of whether\"}}},\"userdoc\":{\"methods\":{\"getExpectedRepaymentValue(bytes32,uint256)\":{\"notice\":\"Returns the cumulative units-of-value expected to be repaid by a given block timestamp.  Note this is not a constant function -- this value can vary on basis of any number of  conditions (e.g. interest rates can be renegotiated if repayments are delinquent).\"},\"getTermEndTimestamp(bytes32)\":{\"notice\":\"A method that returns a Unix timestamp representing the end of the debt agreement's term. contract.\"},\"getValueRepaidToDate(bytes32)\":{\"notice\":\"Returns the cumulative units-of-value repaid by the point at which this method is called.\"},\"registerRepayment(bytes32,address,address,uint256,address)\":{\"notice\":\"When called, the registerRepayment function records the debtor's  repayment, as well as any auxiliary metadata needed by the contract  to determine ex post facto the value repaid (e.g. current USD  exchange rate)\"},\"registerTermStart(bytes32,address)\":{\"notice\":\"When called, the registerTermStart function registers the fact that    the debt agreement has begun.  This method is called as a hook by the    DebtKernel when a debt order associated with `agreementId` is filled.    Method is not required to make any sort of internal state change    upon the debt agreement's start, but MUST return `true` in order to    acknowledge receipt of the transaction.  If, for any reason, the    debt agreement stored at `agreementId` is incompatible with this contract,    MUST return `false`, which will cause the pertinent order fill to fail.    If this method is called for a debt agreement whose term has already begun,    must THROW.  Similarly, if this method is called by any contract other    than the current DebtKernel, must THROW.\"}}}},\"settings\":{\"compilationTarget\":{\"/home/niraj/Desktop/customcognito/contracts/TermsContract.sol\":\"TermsContract\"},\"evmVersion\":\"istanbul\",\"libraries\":{},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"/home/niraj/Desktop/customcognito/contracts/TermsContract.sol\":{\"keccak256\":\"0x1609e95e1859e83955918d6637edea81f3e39976603f0c4e35e93d56313157f1\",\"urls\":[\"bzz-raw://0a28b0687b3f0e5e48e8718672aea6e50548f715e9485a5984a2e2a60340e3ef\",\"dweb:/ipfs/Qmajc7E7JSDQhKaGFwazzp9tmVP5aNjGnKPDV2ewJszeDn\"]}},\"version\":1}",
+  "metadata": "{\"compiler\":{\"version\":\"0.5.16+commit.9c3226ce\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"constant\":true,\"inputs\":[{\"internalType\":\"bytes32\",\"name\":\"agreementId\",\"type\":\"bytes32\"},{\"internalType\":\"uint256\",\"name\":\"timestamp\",\"type\":\"uint256\"}],\"name\":\"getExpectedRepaymentValue\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[{\"internalType\":\"bytes32\",\"name\":\"_agreementId\",\"type\":\"bytes32\"}],\"name\":\"getTermEndTimestamp\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[{\"internalType\":\"bytes32\",\"name\":\"agreementId\",\"type\":\"bytes32\"}],\"name\":\"getValueRepaidToDate\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[{\"internalType\":\"bytes32\",\"name\":\"agreementId\",\"type\":\"bytes32\"},{\"internalType\":\"address\",\"name\":\"payer\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"beneficiary\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"unitsOfRepayment\",\"type\":\"uint256\"},{\"internalType\":\"address\",\"name\":\"tokenAddress\",\"type\":\"address\"}],\"name\":\"registerRepayment\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"_success\",\"type\":\"bool\"}],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[{\"internalType\":\"bytes32\",\"name\":\"agreementId\",\"type\":\"bytes32\"},{\"internalType\":\"address\",\"name\":\"debtor\",\"type\":\"address\"}],\"name\":\"registerTermStart\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"_success\",\"type\":\"bool\"}],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"}],\"devdoc\":{\"methods\":{\"getExpectedRepaymentValue(bytes32,uint256)\":{\"params\":{\"agreementId\":\"bytes32. The agreement id (issuance hash) of the debt agreement to which this pertains.\",\"timestamp\":\"uint. The timestamp of the block for which repayment expectation is being queried.\"},\"return\":\"uint256 The cumulative units-of-value expected to be repaid by the time the given timestamp lapses.\"},\"getValueRepaidToDate(bytes32)\":{\"params\":{\"agreementId\":\"bytes32. The agreement id (issuance hash) of the debt agreement to which this pertains.\"},\"return\":\"uint256 The cumulative units-of-value repaid up until now.\"},\"registerRepayment(bytes32,address,address,uint256,address)\":{\"params\":{\"agreementId\":\"bytes32. The agreement id (issuance hash) of the debt agreement to which this pertains.\",\"beneficiary\":\"address. The address of the payment's beneficiary.\",\"payer\":\"address. The address of the payer.\",\"tokenAddress\":\"address. The address of the token with which the repayment transaction was executed.\",\"unitsOfRepayment\":\"uint. The units-of-value repaid in the transaction.\"}},\"registerTermStart(bytes32,address)\":{\"params\":{\"agreementId\":\"bytes32. The agreement id (issuance hash) of the debt agreement to which this pertains.\",\"debtor\":\"address. The debtor in this particular issuance.\"},\"return\":\"_success bool. Acknowledgment of whether\"}}},\"userdoc\":{\"methods\":{\"getExpectedRepaymentValue(bytes32,uint256)\":{\"notice\":\"Returns the cumulative units-of-value expected to be repaid by a given block timestamp.  Note this is not a constant function -- this value can vary on basis of any number of  conditions (e.g. interest rates can be renegotiated if repayments are delinquent).\"},\"getTermEndTimestamp(bytes32)\":{\"notice\":\"A method that returns a Unix timestamp representing the end of the debt agreement's term. contract.\"},\"getValueRepaidToDate(bytes32)\":{\"notice\":\"Returns the cumulative units-of-value repaid by the point at which this method is called.\"},\"registerRepayment(bytes32,address,address,uint256,address)\":{\"notice\":\"When called, the registerRepayment function records the debtor's  repayment, as well as any auxiliary metadata needed by the contract  to determine ex post facto the value repaid (e.g. current USD  exchange rate)\"},\"registerTermStart(bytes32,address)\":{\"notice\":\"When called, the registerTermStart function registers the fact that    the debt agreement has begun.  This method is called as a hook by the    DebtKernel when a debt order associated with `agreementId` is filled.    Method is not required to make any sort of internal state change    upon the debt agreement's start, but MUST return `true` in order to    acknowledge receipt of the transaction.  If, for any reason, the    debt agreement stored at `agreementId` is incompatible with this contract,    MUST return `false`, which will cause the pertinent order fill to fail.    If this method is called for a debt agreement whose term has already begun,    must THROW.  Similarly, if this method is called by any contract other    than the current DebtKernel, must THROW.\"}}}},\"settings\":{\"compilationTarget\":{\"/home/niraj/Desktop/customcognito/contracts/TermsContract.sol\":\"TermsContract\"},\"evmVersion\":\"istanbul\",\"libraries\":{},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"/home/niraj/Desktop/customcognito/contracts/TermsContract.sol\":{\"keccak256\":\"0x1877300b765b7b2cbcf359daab6dd55ed0be1cc87d728bb5c127b448f3a99e78\",\"urls\":[\"bzz-raw://df12ca8d3e2451e974cbf66f91fd208e4456cb49992cb5a3f74c2eeacf18320e\",\"dweb:/ipfs/QmSbEC4p155AgK4U2gSTa5HzQm98WeQRf9Q3DC92m82Yr5\"]}},\"version\":1}",
   "bytecode": "0x",
   "deployedBytecode": "0x",
   "sourceMap": "",
   "deployedSourceMap": "",
-  "source": "/*\n\n  Copyright 2017 Dharma Labs Inc.\n\n  Licensed under the Apache License, Version 2.0 (the \"License\");\n  you may not use this file except in compliance with the License.\n  You may obtain a copy of the License at\n\n    http://www.apache.org/licenses/LICENSE-2.0\n\n  Unless required by applicable law or agreed to in writing, software\n  distributed under the License is distributed on an \"AS IS\" BASIS,\n  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n  See the License for the specific language governing permissions and\n  limitations under the License.\n\n*/\n\n// SPDX-License-Identifier: MIT\npragma solidity >=0.4.21 <0.7.0;\n\n\ninterface TermsContract {\n     /// When called, the registerTermStart function registers the fact that\n     ///    the debt agreement has begun.  This method is called as a hook by the\n     ///    DebtKernel when a debt order associated with `agreementId` is filled.\n     ///    Method is not required to make any sort of internal state change\n     ///    upon the debt agreement's start, but MUST return `true` in order to\n     ///    acknowledge receipt of the transaction.  If, for any reason, the\n     ///    debt agreement stored at `agreementId` is incompatible with this contract,\n     ///    MUST return `false`, which will cause the pertinent order fill to fail.\n     ///    If this method is called for a debt agreement whose term has already begun,\n     ///    must THROW.  Similarly, if this method is called by any contract other\n     ///    than the current DebtKernel, must THROW.\n     /// @param  agreementId bytes32. The agreement id (issuance hash) of the debt agreement to which this pertains.\n     /// @param  debtor address. The debtor in this particular issuance.\n     /// @return _success bool. Acknowledgment of whether\n    function registerTermStart(bytes32 agreementId,address debtor) external returns(bool _success);\n        \n    \n\n     /// When called, the registerRepayment function records the debtor's\n     ///  repayment, as well as any auxiliary metadata needed by the contract\n     ///  to determine ex post facto the value repaid (e.g. current USD\n     ///  exchange rate)\n     /// @param  agreementId bytes32. The agreement id (issuance hash) of the debt agreement to which this pertains.\n     /// @param  payer address. The address of the payer.\n     /// @param  beneficiary address. The address of the payment's beneficiary.\n     /// @param  unitsOfRepayment uint. The units-of-value repaid in the transaction.\n     /// @param  tokenAddress address. The address of the token with which the repayment transaction was executed.\n    function registerRepayment(\n        bytes32 agreementId,\n        address payer,\n        address beneficiary,\n        uint256 unitsOfRepayment,\n        address tokenAddress\n    ) external returns (bool _success);\n\n     /// Returns the cumulative units-of-value expected to be repaid by a given block timestamp.\n     ///  Note this is not a constant function -- this value can vary on basis of any number of\n     ///  conditions (e.g. interest rates can be renegotiated if repayments are delinquent).\n     /// @param  agreementId bytes32. The agreement id (issuance hash) of the debt agreement to which this pertains.\n     /// @param  timestamp uint. The timestamp of the block for which repayment expectation is being queried.\n     /// @return uint256 The cumulative units-of-value expected to be repaid by the time the given timestamp lapses.\n    function getExpectedRepaymentValue(\n        bytes32 agreementId,\n        uint256 timestamp\n    ) external view returns (uint256);\n\n     /// Returns the cumulative units-of-value repaid by the point at which this method is called.\n     /// @param  agreementId bytes32. The agreement id (issuance hash) of the debt agreement to which this pertains.\n     /// @return uint256 The cumulative units-of-value repaid up until now.\n    function getValueRepaidToDate(\n        bytes32 agreementId\n    ) external view returns (uint256);\n\n    /**\n     * A method that returns a Unix timestamp representing the end of the debt agreement's term.\n     * contract.\n     */\n    function getTermEndTimestamp(\n        bytes32 _agreementId\n    ) external view returns (uint);\n}\n",
+  "source": "/*\n\n  Copyright 2017 Dharma Labs Inc.\n\n  Licensed under the Apache License, Version 2.0 (the \"License\");\n  you may not use this file except in compliance with the License.\n  You may obtain a copy of the License at\n\n    http://www.apache.org/licenses/LICENSE-2.0\n\n  Unless required by applicable law or agreed to in writing, software\n  distributed under the License is distributed on an \"AS IS\" BASIS,\n  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n  See the License for the specific language governing permissions and\n  limitations under the License.\n\n*/\n\n// SPDX-License-Identifier: MIT\npragma solidity >=0.4.21 <0.7.0;\n\n\ninterface TermsContract {\n     /// When called, the registerTermStart function registers the fact that\n     ///    the debt agreement has begun.  This method is called as a hook by the\n     ///    DebtKernel when a debt order associated with `agreementId` is filled.\n     ///    Method is not required to make any sort of internal state change\n     ///    upon the debt agreement's start, but MUST return `true` in order to\n     ///    acknowledge receipt of the transaction.  If, for any reason, the\n     ///    debt agreement stored at `agreementId` is incompatible with this contract,\n     ///    MUST return `false`, which will cause the pertinent order fill to fail.\n     ///    If this method is called for a debt agreement whose term has already begun,\n     ///    must THROW.  Similarly, if this method is called by any contract other\n     ///    than the current DebtKernel, must THROW.\n     /// @param  agreementId bytes32. The agreement id (issuance hash) of the debt agreement to which this pertains.\n     /// @param  debtor address. The debtor in this particular issuance.\n     /// @return _success bool. Acknowledgment of whether\n    function registerTermStart(\n        bytes32 agreementId,\n        address debtor\n    ) external returns (bool _success);\n\n     /// When called, the registerRepayment function records the debtor's\n     ///  repayment, as well as any auxiliary metadata needed by the contract\n     ///  to determine ex post facto the value repaid (e.g. current USD\n     ///  exchange rate)\n     /// @param  agreementId bytes32. The agreement id (issuance hash) of the debt agreement to which this pertains.\n     /// @param  payer address. The address of the payer.\n     /// @param  beneficiary address. The address of the payment's beneficiary.\n     /// @param  unitsOfRepayment uint. The units-of-value repaid in the transaction.\n     /// @param  tokenAddress address. The address of the token with which the repayment transaction was executed.\n    function registerRepayment(\n        bytes32 agreementId,\n        address payer,\n        address beneficiary,\n        uint256 unitsOfRepayment,\n        address tokenAddress\n    ) external returns (bool _success);\n\n     /// Returns the cumulative units-of-value expected to be repaid by a given block timestamp.\n     ///  Note this is not a constant function -- this value can vary on basis of any number of\n     ///  conditions (e.g. interest rates can be renegotiated if repayments are delinquent).\n     /// @param  agreementId bytes32. The agreement id (issuance hash) of the debt agreement to which this pertains.\n     /// @param  timestamp uint. The timestamp of the block for which repayment expectation is being queried.\n     /// @return uint256 The cumulative units-of-value expected to be repaid by the time the given timestamp lapses.\n    function getExpectedRepaymentValue(\n        bytes32 agreementId,\n        uint256 timestamp\n    ) external view returns (uint256);\n\n     /// Returns the cumulative units-of-value repaid by the point at which this method is called.\n     /// @param  agreementId bytes32. The agreement id (issuance hash) of the debt agreement to which this pertains.\n     /// @return uint256 The cumulative units-of-value repaid up until now.\n    function getValueRepaidToDate(\n        bytes32 agreementId\n    ) external view returns (uint256);\n\n    /**\n     * A method that returns a Unix timestamp representing the end of the debt agreement's term.\n     * contract.\n     */\n    function getTermEndTimestamp(\n        bytes32 _agreementId\n    ) external  view returns (uint);\n}\n",
   "sourcePath": "/home/niraj/Desktop/customcognito/contracts/TermsContract.sol",
   "ast": {
     "absolutePath": "/home/niraj/Desktop/customcognito/contracts/TermsContract.sol",
     "exportedSymbols": {
       "TermsContract": [
-        878
+        6653
       ]
     },
-    "id": 879,
+    "id": 6654,
     "nodeType": "SourceUnit",
     "nodes": [
       {
-        "id": 830,
+        "id": 6605,
         "literals": [
           "solidity",
           ">=",
@@ -166,7 +166,7 @@
           ".0"
         ],
         "nodeType": "PragmaDirective",
-        "src": "616:32:6"
+        "src": "616:32:21"
       },
       {
         "baseContracts": [],
@@ -174,9 +174,9 @@
         "contractKind": "interface",
         "documentation": null,
         "fullyImplemented": false,
-        "id": 878,
+        "id": 6653,
         "linearizedBaseContracts": [
-          878
+          6653
         ],
         "name": "TermsContract",
         "nodeType": "ContractDefinition",
@@ -184,23 +184,23 @@
           {
             "body": null,
             "documentation": "When called, the registerTermStart function registers the fact that\n    the debt agreement has begun.  This method is called as a hook by the\n    DebtKernel when a debt order associated with `agreementId` is filled.\n    Method is not required to make any sort of internal state change\n    upon the debt agreement's start, but MUST return `true` in order to\n    acknowledge receipt of the transaction.  If, for any reason, the\n    debt agreement stored at `agreementId` is incompatible with this contract,\n    MUST return `false`, which will cause the pertinent order fill to fail.\n    If this method is called for a debt agreement whose term has already begun,\n    must THROW.  Similarly, if this method is called by any contract other\n    than the current DebtKernel, must THROW.\n @param  agreementId bytes32. The agreement id (issuance hash) of the debt agreement to which this pertains.\n @param  debtor address. The debtor in this particular issuance.\n @return _success bool. Acknowledgment of whether",
-            "id": 839,
+            "id": 6614,
             "implemented": false,
             "kind": "function",
             "modifiers": [],
             "name": "registerTermStart",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 835,
+              "id": 6610,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 832,
+                  "id": 6607,
                   "name": "agreementId",
                   "nodeType": "VariableDeclaration",
-                  "scope": 839,
-                  "src": "1826:19:6",
+                  "scope": 6614,
+                  "src": "1835:19:21",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -208,10 +208,10 @@
                     "typeString": "bytes32"
                   },
                   "typeName": {
-                    "id": 831,
+                    "id": 6606,
                     "name": "bytes32",
                     "nodeType": "ElementaryTypeName",
-                    "src": "1826:7:6",
+                    "src": "1835:7:21",
                     "typeDescriptions": {
                       "typeIdentifier": "t_bytes32",
                       "typeString": "bytes32"
@@ -222,11 +222,11 @@
                 },
                 {
                   "constant": false,
-                  "id": 834,
+                  "id": 6609,
                   "name": "debtor",
                   "nodeType": "VariableDeclaration",
-                  "scope": 839,
-                  "src": "1846:14:6",
+                  "scope": 6614,
+                  "src": "1864:14:21",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -234,10 +234,10 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 833,
+                    "id": 6608,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
-                    "src": "1846:7:6",
+                    "src": "1864:7:21",
                     "stateMutability": "nonpayable",
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
@@ -248,19 +248,19 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "1825:36:6"
+              "src": "1825:59:21"
             },
             "returnParameters": {
-              "id": 838,
+              "id": 6613,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 837,
+                  "id": 6612,
                   "name": "_success",
                   "nodeType": "VariableDeclaration",
-                  "scope": 839,
-                  "src": "1879:13:6",
+                  "scope": 6614,
+                  "src": "1903:13:21",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -268,10 +268,10 @@
                     "typeString": "bool"
                   },
                   "typeName": {
-                    "id": 836,
+                    "id": 6611,
                     "name": "bool",
                     "nodeType": "ElementaryTypeName",
-                    "src": "1879:4:6",
+                    "src": "1903:4:21",
                     "typeDescriptions": {
                       "typeIdentifier": "t_bool",
                       "typeString": "bool"
@@ -281,10 +281,10 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "1878:15:6"
+              "src": "1902:15:21"
             },
-            "scope": 878,
-            "src": "1799:95:6",
+            "scope": 6653,
+            "src": "1799:119:21",
             "stateMutability": "nonpayable",
             "superFunction": null,
             "visibility": "external"
@@ -292,23 +292,23 @@
           {
             "body": null,
             "documentation": "When called, the registerRepayment function records the debtor's\n  repayment, as well as any auxiliary metadata needed by the contract\n  to determine ex post facto the value repaid (e.g. current USD\n  exchange rate)\n @param  agreementId bytes32. The agreement id (issuance hash) of the debt agreement to which this pertains.\n @param  payer address. The address of the payer.\n @param  beneficiary address. The address of the payment's beneficiary.\n @param  unitsOfRepayment uint. The units-of-value repaid in the transaction.\n @param  tokenAddress address. The address of the token with which the repayment transaction was executed.",
-            "id": 854,
+            "id": 6629,
             "implemented": false,
             "kind": "function",
             "modifiers": [],
             "name": "registerRepayment",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 850,
+              "id": 6625,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 841,
+                  "id": 6616,
                   "name": "agreementId",
                   "nodeType": "VariableDeclaration",
-                  "scope": 854,
-                  "src": "2655:19:6",
+                  "scope": 6629,
+                  "src": "2665:19:21",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -316,10 +316,10 @@
                     "typeString": "bytes32"
                   },
                   "typeName": {
-                    "id": 840,
+                    "id": 6615,
                     "name": "bytes32",
                     "nodeType": "ElementaryTypeName",
-                    "src": "2655:7:6",
+                    "src": "2665:7:21",
                     "typeDescriptions": {
                       "typeIdentifier": "t_bytes32",
                       "typeString": "bytes32"
@@ -330,11 +330,11 @@
                 },
                 {
                   "constant": false,
-                  "id": 843,
+                  "id": 6618,
                   "name": "payer",
                   "nodeType": "VariableDeclaration",
-                  "scope": 854,
-                  "src": "2684:13:6",
+                  "scope": 6629,
+                  "src": "2694:13:21",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -342,10 +342,10 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 842,
+                    "id": 6617,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
-                    "src": "2684:7:6",
+                    "src": "2694:7:21",
                     "stateMutability": "nonpayable",
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
@@ -357,11 +357,11 @@
                 },
                 {
                   "constant": false,
-                  "id": 845,
+                  "id": 6620,
                   "name": "beneficiary",
                   "nodeType": "VariableDeclaration",
-                  "scope": 854,
-                  "src": "2707:19:6",
+                  "scope": 6629,
+                  "src": "2717:19:21",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -369,10 +369,10 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 844,
+                    "id": 6619,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
-                    "src": "2707:7:6",
+                    "src": "2717:7:21",
                     "stateMutability": "nonpayable",
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
@@ -384,11 +384,11 @@
                 },
                 {
                   "constant": false,
-                  "id": 847,
+                  "id": 6622,
                   "name": "unitsOfRepayment",
                   "nodeType": "VariableDeclaration",
-                  "scope": 854,
-                  "src": "2736:24:6",
+                  "scope": 6629,
+                  "src": "2746:24:21",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -396,10 +396,10 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 846,
+                    "id": 6621,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
-                    "src": "2736:7:6",
+                    "src": "2746:7:21",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -410,11 +410,11 @@
                 },
                 {
                   "constant": false,
-                  "id": 849,
+                  "id": 6624,
                   "name": "tokenAddress",
                   "nodeType": "VariableDeclaration",
-                  "scope": 854,
-                  "src": "2770:20:6",
+                  "scope": 6629,
+                  "src": "2780:20:21",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -422,10 +422,10 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 848,
+                    "id": 6623,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
-                    "src": "2770:7:6",
+                    "src": "2780:7:21",
                     "stateMutability": "nonpayable",
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
@@ -436,19 +436,19 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "2645:151:6"
+              "src": "2655:151:21"
             },
             "returnParameters": {
-              "id": 853,
+              "id": 6628,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 852,
+                  "id": 6627,
                   "name": "_success",
                   "nodeType": "VariableDeclaration",
-                  "scope": 854,
-                  "src": "2815:13:6",
+                  "scope": 6629,
+                  "src": "2825:13:21",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -456,10 +456,10 @@
                     "typeString": "bool"
                   },
                   "typeName": {
-                    "id": 851,
+                    "id": 6626,
                     "name": "bool",
                     "nodeType": "ElementaryTypeName",
-                    "src": "2815:4:6",
+                    "src": "2825:4:21",
                     "typeDescriptions": {
                       "typeIdentifier": "t_bool",
                       "typeString": "bool"
@@ -469,10 +469,10 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "2814:15:6"
+              "src": "2824:15:21"
             },
-            "scope": 878,
-            "src": "2619:211:6",
+            "scope": 6653,
+            "src": "2629:211:21",
             "stateMutability": "nonpayable",
             "superFunction": null,
             "visibility": "external"
@@ -480,23 +480,23 @@
           {
             "body": null,
             "documentation": "Returns the cumulative units-of-value expected to be repaid by a given block timestamp.\n  Note this is not a constant function -- this value can vary on basis of any number of\n  conditions (e.g. interest rates can be renegotiated if repayments are delinquent).\n @param  agreementId bytes32. The agreement id (issuance hash) of the debt agreement to which this pertains.\n @param  timestamp uint. The timestamp of the block for which repayment expectation is being queried.\n @return uint256 The cumulative units-of-value expected to be repaid by the time the given timestamp lapses.",
-            "id": 863,
+            "id": 6638,
             "implemented": false,
             "kind": "function",
             "modifiers": [],
             "name": "getExpectedRepaymentValue",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 859,
+              "id": 6634,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 856,
+                  "id": 6631,
                   "name": "agreementId",
                   "nodeType": "VariableDeclaration",
-                  "scope": 863,
-                  "src": "3510:19:6",
+                  "scope": 6638,
+                  "src": "3520:19:21",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -504,10 +504,10 @@
                     "typeString": "bytes32"
                   },
                   "typeName": {
-                    "id": 855,
+                    "id": 6630,
                     "name": "bytes32",
                     "nodeType": "ElementaryTypeName",
-                    "src": "3510:7:6",
+                    "src": "3520:7:21",
                     "typeDescriptions": {
                       "typeIdentifier": "t_bytes32",
                       "typeString": "bytes32"
@@ -518,11 +518,11 @@
                 },
                 {
                   "constant": false,
-                  "id": 858,
+                  "id": 6633,
                   "name": "timestamp",
                   "nodeType": "VariableDeclaration",
-                  "scope": 863,
-                  "src": "3539:17:6",
+                  "scope": 6638,
+                  "src": "3549:17:21",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -530,10 +530,10 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 857,
+                    "id": 6632,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
-                    "src": "3539:7:6",
+                    "src": "3549:7:21",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -543,19 +543,19 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "3500:62:6"
+              "src": "3510:62:21"
             },
             "returnParameters": {
-              "id": 862,
+              "id": 6637,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 861,
+                  "id": 6636,
                   "name": "",
                   "nodeType": "VariableDeclaration",
-                  "scope": 863,
-                  "src": "3586:7:6",
+                  "scope": 6638,
+                  "src": "3596:7:21",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -563,10 +563,10 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 860,
+                    "id": 6635,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
-                    "src": "3586:7:6",
+                    "src": "3596:7:21",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -576,10 +576,10 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "3585:9:6"
+              "src": "3595:9:21"
             },
-            "scope": 878,
-            "src": "3466:129:6",
+            "scope": 6653,
+            "src": "3476:129:21",
             "stateMutability": "view",
             "superFunction": null,
             "visibility": "external"
@@ -587,23 +587,23 @@
           {
             "body": null,
             "documentation": "Returns the cumulative units-of-value repaid by the point at which this method is called.\n @param  agreementId bytes32. The agreement id (issuance hash) of the debt agreement to which this pertains.\n @return uint256 The cumulative units-of-value repaid up until now.",
-            "id": 870,
+            "id": 6645,
             "implemented": false,
             "kind": "function",
             "modifiers": [],
             "name": "getValueRepaidToDate",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 866,
+              "id": 6641,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 865,
+                  "id": 6640,
                   "name": "agreementId",
                   "nodeType": "VariableDeclaration",
-                  "scope": 870,
-                  "src": "3932:19:6",
+                  "scope": 6645,
+                  "src": "3942:19:21",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -611,10 +611,10 @@
                     "typeString": "bytes32"
                   },
                   "typeName": {
-                    "id": 864,
+                    "id": 6639,
                     "name": "bytes32",
                     "nodeType": "ElementaryTypeName",
-                    "src": "3932:7:6",
+                    "src": "3942:7:21",
                     "typeDescriptions": {
                       "typeIdentifier": "t_bytes32",
                       "typeString": "bytes32"
@@ -624,19 +624,19 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "3922:35:6"
+              "src": "3932:35:21"
             },
             "returnParameters": {
-              "id": 869,
+              "id": 6644,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 868,
+                  "id": 6643,
                   "name": "",
                   "nodeType": "VariableDeclaration",
-                  "scope": 870,
-                  "src": "3981:7:6",
+                  "scope": 6645,
+                  "src": "3991:7:21",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -644,10 +644,10 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 867,
+                    "id": 6642,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
-                    "src": "3981:7:6",
+                    "src": "3991:7:21",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -657,10 +657,10 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "3980:9:6"
+              "src": "3990:9:21"
             },
-            "scope": 878,
-            "src": "3893:97:6",
+            "scope": 6653,
+            "src": "3903:97:21",
             "stateMutability": "view",
             "superFunction": null,
             "visibility": "external"
@@ -668,23 +668,23 @@
           {
             "body": null,
             "documentation": "A method that returns a Unix timestamp representing the end of the debt agreement's term.\ncontract.",
-            "id": 877,
+            "id": 6652,
             "implemented": false,
             "kind": "function",
             "modifiers": [],
             "name": "getTermEndTimestamp",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 873,
+              "id": 6648,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 872,
+                  "id": 6647,
                   "name": "_agreementId",
                   "nodeType": "VariableDeclaration",
-                  "scope": 877,
-                  "src": "4164:20:6",
+                  "scope": 6652,
+                  "src": "4174:20:21",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -692,10 +692,10 @@
                     "typeString": "bytes32"
                   },
                   "typeName": {
-                    "id": 871,
+                    "id": 6646,
                     "name": "bytes32",
                     "nodeType": "ElementaryTypeName",
-                    "src": "4164:7:6",
+                    "src": "4174:7:21",
                     "typeDescriptions": {
                       "typeIdentifier": "t_bytes32",
                       "typeString": "bytes32"
@@ -705,19 +705,19 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "4154:36:6"
+              "src": "4164:36:21"
             },
             "returnParameters": {
-              "id": 876,
+              "id": 6651,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 875,
+                  "id": 6650,
                   "name": "",
                   "nodeType": "VariableDeclaration",
-                  "scope": 877,
-                  "src": "4214:4:6",
+                  "scope": 6652,
+                  "src": "4225:4:21",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -725,10 +725,10 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 874,
+                    "id": 6649,
                     "name": "uint",
                     "nodeType": "ElementaryTypeName",
-                    "src": "4214:4:6",
+                    "src": "4225:4:21",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -738,33 +738,33 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "4213:6:6"
+              "src": "4224:6:21"
             },
-            "scope": 878,
-            "src": "4126:94:6",
+            "scope": 6653,
+            "src": "4136:95:21",
             "stateMutability": "view",
             "superFunction": null,
             "visibility": "external"
           }
         ],
-        "scope": 879,
-        "src": "651:3571:6"
+        "scope": 6654,
+        "src": "651:3582:21"
       }
     ],
-    "src": "616:3607:6"
+    "src": "616:3618:21"
   },
   "legacyAST": {
     "absolutePath": "/home/niraj/Desktop/customcognito/contracts/TermsContract.sol",
     "exportedSymbols": {
       "TermsContract": [
-        878
+        6653
       ]
     },
-    "id": 879,
+    "id": 6654,
     "nodeType": "SourceUnit",
     "nodes": [
       {
-        "id": 830,
+        "id": 6605,
         "literals": [
           "solidity",
           ">=",
@@ -775,7 +775,7 @@
           ".0"
         ],
         "nodeType": "PragmaDirective",
-        "src": "616:32:6"
+        "src": "616:32:21"
       },
       {
         "baseContracts": [],
@@ -783,9 +783,9 @@
         "contractKind": "interface",
         "documentation": null,
         "fullyImplemented": false,
-        "id": 878,
+        "id": 6653,
         "linearizedBaseContracts": [
-          878
+          6653
         ],
         "name": "TermsContract",
         "nodeType": "ContractDefinition",
@@ -793,23 +793,23 @@
           {
             "body": null,
             "documentation": "When called, the registerTermStart function registers the fact that\n    the debt agreement has begun.  This method is called as a hook by the\n    DebtKernel when a debt order associated with `agreementId` is filled.\n    Method is not required to make any sort of internal state change\n    upon the debt agreement's start, but MUST return `true` in order to\n    acknowledge receipt of the transaction.  If, for any reason, the\n    debt agreement stored at `agreementId` is incompatible with this contract,\n    MUST return `false`, which will cause the pertinent order fill to fail.\n    If this method is called for a debt agreement whose term has already begun,\n    must THROW.  Similarly, if this method is called by any contract other\n    than the current DebtKernel, must THROW.\n @param  agreementId bytes32. The agreement id (issuance hash) of the debt agreement to which this pertains.\n @param  debtor address. The debtor in this particular issuance.\n @return _success bool. Acknowledgment of whether",
-            "id": 839,
+            "id": 6614,
             "implemented": false,
             "kind": "function",
             "modifiers": [],
             "name": "registerTermStart",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 835,
+              "id": 6610,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 832,
+                  "id": 6607,
                   "name": "agreementId",
                   "nodeType": "VariableDeclaration",
-                  "scope": 839,
-                  "src": "1826:19:6",
+                  "scope": 6614,
+                  "src": "1835:19:21",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -817,10 +817,10 @@
                     "typeString": "bytes32"
                   },
                   "typeName": {
-                    "id": 831,
+                    "id": 6606,
                     "name": "bytes32",
                     "nodeType": "ElementaryTypeName",
-                    "src": "1826:7:6",
+                    "src": "1835:7:21",
                     "typeDescriptions": {
                       "typeIdentifier": "t_bytes32",
                       "typeString": "bytes32"
@@ -831,11 +831,11 @@
                 },
                 {
                   "constant": false,
-                  "id": 834,
+                  "id": 6609,
                   "name": "debtor",
                   "nodeType": "VariableDeclaration",
-                  "scope": 839,
-                  "src": "1846:14:6",
+                  "scope": 6614,
+                  "src": "1864:14:21",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -843,10 +843,10 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 833,
+                    "id": 6608,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
-                    "src": "1846:7:6",
+                    "src": "1864:7:21",
                     "stateMutability": "nonpayable",
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
@@ -857,19 +857,19 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "1825:36:6"
+              "src": "1825:59:21"
             },
             "returnParameters": {
-              "id": 838,
+              "id": 6613,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 837,
+                  "id": 6612,
                   "name": "_success",
                   "nodeType": "VariableDeclaration",
-                  "scope": 839,
-                  "src": "1879:13:6",
+                  "scope": 6614,
+                  "src": "1903:13:21",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -877,10 +877,10 @@
                     "typeString": "bool"
                   },
                   "typeName": {
-                    "id": 836,
+                    "id": 6611,
                     "name": "bool",
                     "nodeType": "ElementaryTypeName",
-                    "src": "1879:4:6",
+                    "src": "1903:4:21",
                     "typeDescriptions": {
                       "typeIdentifier": "t_bool",
                       "typeString": "bool"
@@ -890,10 +890,10 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "1878:15:6"
+              "src": "1902:15:21"
             },
-            "scope": 878,
-            "src": "1799:95:6",
+            "scope": 6653,
+            "src": "1799:119:21",
             "stateMutability": "nonpayable",
             "superFunction": null,
             "visibility": "external"
@@ -901,23 +901,23 @@
           {
             "body": null,
             "documentation": "When called, the registerRepayment function records the debtor's\n  repayment, as well as any auxiliary metadata needed by the contract\n  to determine ex post facto the value repaid (e.g. current USD\n  exchange rate)\n @param  agreementId bytes32. The agreement id (issuance hash) of the debt agreement to which this pertains.\n @param  payer address. The address of the payer.\n @param  beneficiary address. The address of the payment's beneficiary.\n @param  unitsOfRepayment uint. The units-of-value repaid in the transaction.\n @param  tokenAddress address. The address of the token with which the repayment transaction was executed.",
-            "id": 854,
+            "id": 6629,
             "implemented": false,
             "kind": "function",
             "modifiers": [],
             "name": "registerRepayment",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 850,
+              "id": 6625,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 841,
+                  "id": 6616,
                   "name": "agreementId",
                   "nodeType": "VariableDeclaration",
-                  "scope": 854,
-                  "src": "2655:19:6",
+                  "scope": 6629,
+                  "src": "2665:19:21",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -925,10 +925,10 @@
                     "typeString": "bytes32"
                   },
                   "typeName": {
-                    "id": 840,
+                    "id": 6615,
                     "name": "bytes32",
                     "nodeType": "ElementaryTypeName",
-                    "src": "2655:7:6",
+                    "src": "2665:7:21",
                     "typeDescriptions": {
                       "typeIdentifier": "t_bytes32",
                       "typeString": "bytes32"
@@ -939,11 +939,11 @@
                 },
                 {
                   "constant": false,
-                  "id": 843,
+                  "id": 6618,
                   "name": "payer",
                   "nodeType": "VariableDeclaration",
-                  "scope": 854,
-                  "src": "2684:13:6",
+                  "scope": 6629,
+                  "src": "2694:13:21",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -951,10 +951,10 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 842,
+                    "id": 6617,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
-                    "src": "2684:7:6",
+                    "src": "2694:7:21",
                     "stateMutability": "nonpayable",
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
@@ -966,11 +966,11 @@
                 },
                 {
                   "constant": false,
-                  "id": 845,
+                  "id": 6620,
                   "name": "beneficiary",
                   "nodeType": "VariableDeclaration",
-                  "scope": 854,
-                  "src": "2707:19:6",
+                  "scope": 6629,
+                  "src": "2717:19:21",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -978,10 +978,10 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 844,
+                    "id": 6619,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
-                    "src": "2707:7:6",
+                    "src": "2717:7:21",
                     "stateMutability": "nonpayable",
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
@@ -993,11 +993,11 @@
                 },
                 {
                   "constant": false,
-                  "id": 847,
+                  "id": 6622,
                   "name": "unitsOfRepayment",
                   "nodeType": "VariableDeclaration",
-                  "scope": 854,
-                  "src": "2736:24:6",
+                  "scope": 6629,
+                  "src": "2746:24:21",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -1005,10 +1005,10 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 846,
+                    "id": 6621,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
-                    "src": "2736:7:6",
+                    "src": "2746:7:21",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -1019,11 +1019,11 @@
                 },
                 {
                   "constant": false,
-                  "id": 849,
+                  "id": 6624,
                   "name": "tokenAddress",
                   "nodeType": "VariableDeclaration",
-                  "scope": 854,
-                  "src": "2770:20:6",
+                  "scope": 6629,
+                  "src": "2780:20:21",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -1031,10 +1031,10 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 848,
+                    "id": 6623,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
-                    "src": "2770:7:6",
+                    "src": "2780:7:21",
                     "stateMutability": "nonpayable",
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
@@ -1045,19 +1045,19 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "2645:151:6"
+              "src": "2655:151:21"
             },
             "returnParameters": {
-              "id": 853,
+              "id": 6628,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 852,
+                  "id": 6627,
                   "name": "_success",
                   "nodeType": "VariableDeclaration",
-                  "scope": 854,
-                  "src": "2815:13:6",
+                  "scope": 6629,
+                  "src": "2825:13:21",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -1065,10 +1065,10 @@
                     "typeString": "bool"
                   },
                   "typeName": {
-                    "id": 851,
+                    "id": 6626,
                     "name": "bool",
                     "nodeType": "ElementaryTypeName",
-                    "src": "2815:4:6",
+                    "src": "2825:4:21",
                     "typeDescriptions": {
                       "typeIdentifier": "t_bool",
                       "typeString": "bool"
@@ -1078,10 +1078,10 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "2814:15:6"
+              "src": "2824:15:21"
             },
-            "scope": 878,
-            "src": "2619:211:6",
+            "scope": 6653,
+            "src": "2629:211:21",
             "stateMutability": "nonpayable",
             "superFunction": null,
             "visibility": "external"
@@ -1089,23 +1089,23 @@
           {
             "body": null,
             "documentation": "Returns the cumulative units-of-value expected to be repaid by a given block timestamp.\n  Note this is not a constant function -- this value can vary on basis of any number of\n  conditions (e.g. interest rates can be renegotiated if repayments are delinquent).\n @param  agreementId bytes32. The agreement id (issuance hash) of the debt agreement to which this pertains.\n @param  timestamp uint. The timestamp of the block for which repayment expectation is being queried.\n @return uint256 The cumulative units-of-value expected to be repaid by the time the given timestamp lapses.",
-            "id": 863,
+            "id": 6638,
             "implemented": false,
             "kind": "function",
             "modifiers": [],
             "name": "getExpectedRepaymentValue",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 859,
+              "id": 6634,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 856,
+                  "id": 6631,
                   "name": "agreementId",
                   "nodeType": "VariableDeclaration",
-                  "scope": 863,
-                  "src": "3510:19:6",
+                  "scope": 6638,
+                  "src": "3520:19:21",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -1113,10 +1113,10 @@
                     "typeString": "bytes32"
                   },
                   "typeName": {
-                    "id": 855,
+                    "id": 6630,
                     "name": "bytes32",
                     "nodeType": "ElementaryTypeName",
-                    "src": "3510:7:6",
+                    "src": "3520:7:21",
                     "typeDescriptions": {
                       "typeIdentifier": "t_bytes32",
                       "typeString": "bytes32"
@@ -1127,11 +1127,11 @@
                 },
                 {
                   "constant": false,
-                  "id": 858,
+                  "id": 6633,
                   "name": "timestamp",
                   "nodeType": "VariableDeclaration",
-                  "scope": 863,
-                  "src": "3539:17:6",
+                  "scope": 6638,
+                  "src": "3549:17:21",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -1139,10 +1139,10 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 857,
+                    "id": 6632,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
-                    "src": "3539:7:6",
+                    "src": "3549:7:21",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -1152,19 +1152,19 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "3500:62:6"
+              "src": "3510:62:21"
             },
             "returnParameters": {
-              "id": 862,
+              "id": 6637,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 861,
+                  "id": 6636,
                   "name": "",
                   "nodeType": "VariableDeclaration",
-                  "scope": 863,
-                  "src": "3586:7:6",
+                  "scope": 6638,
+                  "src": "3596:7:21",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -1172,10 +1172,10 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 860,
+                    "id": 6635,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
-                    "src": "3586:7:6",
+                    "src": "3596:7:21",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -1185,10 +1185,10 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "3585:9:6"
+              "src": "3595:9:21"
             },
-            "scope": 878,
-            "src": "3466:129:6",
+            "scope": 6653,
+            "src": "3476:129:21",
             "stateMutability": "view",
             "superFunction": null,
             "visibility": "external"
@@ -1196,23 +1196,23 @@
           {
             "body": null,
             "documentation": "Returns the cumulative units-of-value repaid by the point at which this method is called.\n @param  agreementId bytes32. The agreement id (issuance hash) of the debt agreement to which this pertains.\n @return uint256 The cumulative units-of-value repaid up until now.",
-            "id": 870,
+            "id": 6645,
             "implemented": false,
             "kind": "function",
             "modifiers": [],
             "name": "getValueRepaidToDate",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 866,
+              "id": 6641,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 865,
+                  "id": 6640,
                   "name": "agreementId",
                   "nodeType": "VariableDeclaration",
-                  "scope": 870,
-                  "src": "3932:19:6",
+                  "scope": 6645,
+                  "src": "3942:19:21",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -1220,10 +1220,10 @@
                     "typeString": "bytes32"
                   },
                   "typeName": {
-                    "id": 864,
+                    "id": 6639,
                     "name": "bytes32",
                     "nodeType": "ElementaryTypeName",
-                    "src": "3932:7:6",
+                    "src": "3942:7:21",
                     "typeDescriptions": {
                       "typeIdentifier": "t_bytes32",
                       "typeString": "bytes32"
@@ -1233,19 +1233,19 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "3922:35:6"
+              "src": "3932:35:21"
             },
             "returnParameters": {
-              "id": 869,
+              "id": 6644,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 868,
+                  "id": 6643,
                   "name": "",
                   "nodeType": "VariableDeclaration",
-                  "scope": 870,
-                  "src": "3981:7:6",
+                  "scope": 6645,
+                  "src": "3991:7:21",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -1253,10 +1253,10 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 867,
+                    "id": 6642,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
-                    "src": "3981:7:6",
+                    "src": "3991:7:21",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -1266,10 +1266,10 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "3980:9:6"
+              "src": "3990:9:21"
             },
-            "scope": 878,
-            "src": "3893:97:6",
+            "scope": 6653,
+            "src": "3903:97:21",
             "stateMutability": "view",
             "superFunction": null,
             "visibility": "external"
@@ -1277,23 +1277,23 @@
           {
             "body": null,
             "documentation": "A method that returns a Unix timestamp representing the end of the debt agreement's term.\ncontract.",
-            "id": 877,
+            "id": 6652,
             "implemented": false,
             "kind": "function",
             "modifiers": [],
             "name": "getTermEndTimestamp",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 873,
+              "id": 6648,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 872,
+                  "id": 6647,
                   "name": "_agreementId",
                   "nodeType": "VariableDeclaration",
-                  "scope": 877,
-                  "src": "4164:20:6",
+                  "scope": 6652,
+                  "src": "4174:20:21",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -1301,10 +1301,10 @@
                     "typeString": "bytes32"
                   },
                   "typeName": {
-                    "id": 871,
+                    "id": 6646,
                     "name": "bytes32",
                     "nodeType": "ElementaryTypeName",
-                    "src": "4164:7:6",
+                    "src": "4174:7:21",
                     "typeDescriptions": {
                       "typeIdentifier": "t_bytes32",
                       "typeString": "bytes32"
@@ -1314,19 +1314,19 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "4154:36:6"
+              "src": "4164:36:21"
             },
             "returnParameters": {
-              "id": 876,
+              "id": 6651,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 875,
+                  "id": 6650,
                   "name": "",
                   "nodeType": "VariableDeclaration",
-                  "scope": 877,
-                  "src": "4214:4:6",
+                  "scope": 6652,
+                  "src": "4225:4:21",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -1334,10 +1334,10 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 874,
+                    "id": 6649,
                     "name": "uint",
                     "nodeType": "ElementaryTypeName",
-                    "src": "4214:4:6",
+                    "src": "4225:4:21",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -1347,20 +1347,20 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "4213:6:6"
+              "src": "4224:6:21"
             },
-            "scope": 878,
-            "src": "4126:94:6",
+            "scope": 6653,
+            "src": "4136:95:21",
             "stateMutability": "view",
             "superFunction": null,
             "visibility": "external"
           }
         ],
-        "scope": 879,
-        "src": "651:3571:6"
+        "scope": 6654,
+        "src": "651:3582:21"
       }
     ],
-    "src": "616:3607:6"
+    "src": "616:3618:21"
   },
   "compiler": {
     "name": "solc",
@@ -1368,7 +1368,7 @@
   },
   "networks": {},
   "schemaVersion": "3.3.1",
-  "updatedAt": "2020-11-02T05:35:24.668Z",
+  "updatedAt": "2020-11-04T09:55:36.591Z",
   "devdoc": {
     "methods": {
       "getExpectedRepaymentValue(bytes32,uint256)": {
