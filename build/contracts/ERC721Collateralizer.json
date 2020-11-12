@@ -17203,7 +17203,7 @@
   },
   "networks": {},
   "schemaVersion": "3.3.1",
-  "updatedAt": "2020-11-04T11:37:24.963Z",
+  "updatedAt": "2020-11-09T08:10:46.819Z",
   "devdoc": {
     "methods": {
       "collateralize(bytes32,address)": {

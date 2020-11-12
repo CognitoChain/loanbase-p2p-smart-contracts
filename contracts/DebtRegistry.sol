@@ -21,9 +21,9 @@
 pragma solidity >=0.4.21 <0.7.0;
 
 
-import { PermissionsLib, PermissionEvents } from "../contracts/libraries/PermissionsLib.sol";
+import { PermissionsLib, PermissionEvents } from "./PermissionsLib.sol";
 import "./SafeMath.sol";
-import "./lifecycle/Pausable.sol";
+import "./Pausable.sol";
 
 
 /**
@@ -34,7 +34,7 @@ import "./lifecycle/Pausable.sol";
  *
  * Author: Nadav Hollander -- Github: nadavhollander
  */
-contract DebtRegistry is Pausable, PermissionEvents {
+contract DebtRegistry is Ownable,Pausable, PermissionEvents {
     using SafeMath for uint;
     using PermissionsLib for PermissionsLib.Permissions;
 
@@ -349,16 +349,13 @@ contract DebtRegistry is Pausable, PermissionEvents {
         pure
         returns(bytes32)
     {
-        return keccak256(abi.encodePacked(
-            _entry.version,
+         return keccak256(abi.encode(_entry.version,
             _debtor,
             _entry.underwriter,
             _entry.underwriterRiskRating,
             _entry.termsContract,
             _entry.termsContractParameters,
-            _salt
-            )
-            
-        );
+            _salt));
+    
     }
 }

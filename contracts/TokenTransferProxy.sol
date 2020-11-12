@@ -18,11 +18,10 @@
 // SPDX-License-Identifier: MIT
 pragma solidity >=0.4.21 <0.7.0;
 
-import "./DebtRegistry.sol";
-import { PermissionsLib, PermissionEvents } from "../contracts/libraries/PermissionsLib.sol";
-import "../contracts/lifecycle/Pausable.sol";
-import "./ERC20.sol";
 
+import { PermissionsLib, PermissionEvents } from "./PermissionsLib.sol";
+import "./Pausable.sol";
+import "./ERC20.sol";
 
 
 /**
@@ -34,8 +33,6 @@ import "./ERC20.sol";
  *
  * Author: Nadav Hollander -- Github: nadavhollander
  */
-
- 
 contract TokenTransferProxy is Pausable, PermissionEvents {
     using PermissionsLib for PermissionsLib.Permissions;
 
