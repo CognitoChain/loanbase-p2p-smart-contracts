@@ -655,7 +655,7 @@ contract DebtKernel is Pausable {
     function getBalance(
         address token,
         address owner
-    )   view
+    )   
         internal
         
         returns (uint _balance)
@@ -670,8 +670,8 @@ contract DebtKernel is Pausable {
     function getAllowance(
         address token,
         address owner
-    )   view
-        internal
+    )   internal
+        
         
         returns (uint _allowance)
     {

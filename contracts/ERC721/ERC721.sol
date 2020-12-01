@@ -469,4 +469,14 @@ contract ERC721 is Context, IERC165, IERC721, IERC721Metadata, IERC721Enumerable
      * To learn more about hooks, head to xref:ROOT:extending-contracts.adoc#using-hooks[Using Hooks].
      */
     function _beforeTokenTransfer(address from, address to, uint256 tokenId) internal  { }
+
+
+    function _msgSender() internal view  returns (address payable) {
+        return msg.sender;
+    }
+
+    function _msgData() internal view  returns (bytes memory) {
+        this; // silence state mutability warning without generating bytecode - see https://github.com/ethereum/solidity/issues/2691
+        return msg.data;
+    }
 }
